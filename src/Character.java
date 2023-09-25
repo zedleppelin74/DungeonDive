@@ -18,6 +18,7 @@ public class Character {
 
     public void attack(Character character) {
         character.health -= attack;
+        System.out.println(character.getClass().getSimpleName() + " health is now " + character.health);
     }
 
     public boolean duck() {

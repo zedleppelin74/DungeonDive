@@ -79,7 +79,16 @@ public class Game {
                 attacking = enemy;
                 defending = player;
             }
-            attacking.attack(defending);
+            try {
+                Thread.sleep(1000);
+                if (!defending.duck()) {
+                    attacking.attack(defending);
+                } else {
+                    System.out.println(defending.getClass().getSimpleName() + " ducked!");
+                }
+            } catch(InterruptedException e){
+                e.printStackTrace();
+            }
             count++;
         }
 
